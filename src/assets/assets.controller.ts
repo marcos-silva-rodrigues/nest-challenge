@@ -7,13 +7,13 @@ export class AssetsController {
 
   @Post()
   @HttpCode(201)
-  create(@Body() body: { id: string; symbol: string }) {
-    const response = this.assetsService.create(body);
+  async create(@Body() body: { id: string; symbol: string }) {
+    const response = await this.assetsService.create(body);
     return response;
   }
 
   @Get()
-  findAll() {
-    return this.assetsService.findAll();
+  async findAll() {
+    return await this.assetsService.findAll();
   }
 }

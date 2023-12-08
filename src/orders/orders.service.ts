@@ -28,8 +28,8 @@ export class OrdersService {
     }
   }
 
-  findAll() {
-    return this.prismaService.order.findMany({
+  async findAll() {
+    return await this.prismaService.order.findMany({
       include: {
         Asset: {
           select: {

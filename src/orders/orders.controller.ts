@@ -6,12 +6,12 @@ export class OrdersController {
   constructor(private readonly ordersService: OrdersService) {}
 
   @Post()
-  create(@Body() body: { asset_id: string; price: number }) {
-    return this.ordersService.create(body);
+  async create(@Body() body: { asset_id: string; price: number }) {
+    return await this.ordersService.create(body);
   }
 
   @Get()
-  findAll() {
-    return this.ordersService.findAll();
+  async findAll() {
+    return await this.ordersService.findAll();
   }
 }

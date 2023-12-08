@@ -23,7 +23,7 @@ export class AssetsService {
     });
   }
 
-  findAll() {
-    return this.prismaService.asset.findMany();
+  async findAll() {
+    return await this.prismaService.asset.findMany();
   }
 }

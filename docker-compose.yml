@@ -7,6 +7,10 @@ services:
       - 3000:3000
     volumes:
       - .:/home/node/app
+    environment:
+      DATABASE_URL: mongodb://root:root@db:27017/nest?authSource=admin
+    depends_on:
+      - db
 
   db:
     image: bitnami/mongodb:5.0.17
