@@ -11,4 +11,4 @@ COPY . .
 RUN npx prisma generate
 RUN npm run build
 
-CMD [ "/home/node/app/.docker/start-dev.sh" ]
+CMD [ "npm", "run", "start:prod" ]
