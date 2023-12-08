@@ -17,9 +17,10 @@ services:
     volumes:
       - mongodb_data:/bitnami/mongodb
     environment:
-      MONGODB_ROOT_USERNAME: root
+      MONGODB_ROOT_USER: root
       MONGODB_ROOT_PASSWORD: root
       MONGODB_REPLICA_SET_MODE: primary
+      MONGODB_REPLICA_SET_NAME: rs0
       MONGODB_REPLICA_SET_KEY: 123456
       MONGODB_DATABASE: nest
     ports:
