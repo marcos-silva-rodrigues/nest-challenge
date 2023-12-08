@@ -11,5 +11,5 @@ RUN npm install
 COPY . .
 RUN npx prisma generate
 # RUN npm run build
-CMD [ "npm", "run", "start:live" ]
+CMD [ "npm", "run", "start:dev" ]
 # CMD [ "/home/node/app/.docker/start-dev.sh" ]
