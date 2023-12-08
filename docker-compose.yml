@@ -21,6 +21,7 @@ services:
       MONGODB_REPLICA_SET_MODE: primary
       MONGODB_REPLICA_SET_KEY: replicasetkey123
       MONGODB_DATABASE: nest
+      MONGODB_INITIAL_PRIMARY_HOST: db
     ports:
       - '27017:27017'
     volumes:
