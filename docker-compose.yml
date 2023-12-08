@@ -15,7 +15,6 @@ services:
   db:
     image: bitnami/mongodb:5.0.17
     environment:
-      MONGODB_ADVERTISED_HOSTNAME: app
       MONGODB_ROOT_USER: root
       MONGODB_ROOT_PASSWORD: root
       MONGODB_REPLICA_SET_MODE: primary
