@@ -13,7 +13,7 @@ export class AssetsController {
   }
 
   @Get()
-  async findAll() {
-    return await this.assetsService.findAll();
+  findAll() {
+    return this.assetsService.findAll();
   }
 }

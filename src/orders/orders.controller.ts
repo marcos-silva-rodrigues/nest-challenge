@@ -11,7 +11,7 @@ export class OrdersController {
   }
 
   @Get()
-  async findAll() {
-    return await this.ordersService.findAll();
+  findAll() {
+    return this.ordersService.findAll();
   }
 }
