@@ -8,7 +8,7 @@ services:
     volumes:
       - .:/home/node/app
     environment:
-      DATABASE_URL: mongodb://root:root@db:27017/nest?authSource=admin&connectTimeoutMS=5000
+      DATABASE_URL: mongodb://root:root@db:27017/nest?authSource=admin&connectTimeoutMS=5000&retryWrites=true&w=majority&maxPoolSize=50
     depends_on:
       - db
 
@@ -17,10 +17,13 @@ services:
     volumes:
       - mongodb_data:/bitnami/mongodb
     environment:
+      MONGODB_ROOT_USERNAME: root
       MONGODB_ROOT_PASSWORD: root
       MONGODB_REPLICA_SET_MODE: primary
       MONGODB_REPLICA_SET_KEY: 123456
       MONGODB_DATABASE: nest
+    ports:
+      - '27018:27018'
 
 volumes:
   mongodb_data:
