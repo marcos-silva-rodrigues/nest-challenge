@@ -9,6 +9,5 @@ RUN npm install
 
 COPY . .
 RUN npx prisma generate
-
-RUN ls -a
-CMD npm run start:dev
+RUN npm run build
+CMD [ "tail", "-f", "/dev/null" ]
