@@ -4,10 +4,11 @@ RUN apt update && apt install -y openssl procps
 
 WORKDIR /home/node/app
 
-COPY package*.json ./
+COPY package.json package.json
+COPY package-lock.json package-lock.json
 RUN npm install
 
 COPY . .
 RUN npx prisma generate
-RUN npm run build
-CMD [ "tail", "-f", "/dev/null" ]
+
+CMD [ "/home/node/app/.docker/start-dev.sh" ]
